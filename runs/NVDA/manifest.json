@@ -1,0 +1,51 @@
+{
+  "ticker": "NVDA",
+  "analysis_date": "2026-03-18",
+  "workflow": [
+    "fact_pack",
+    "business_structure",
+    "market_expectations",
+    "variant_view",
+    "pm_decision"
+  ],
+  "rerun_rules": [
+    {
+      "from": "market_expectations",
+      "to": [
+        "fact_pack",
+        "business_structure"
+      ],
+      "trigger": [
+        "行业/公司事实口径不清",
+        "业务驱动树过于模糊，无法做 reverse thinking",
+        "共识和价格隐含预期无法建立可靠锚点"
+      ]
+    },
+    {
+      "from": "variant_view",
+      "to": [
+        "market_expectations"
+      ],
+      "trigger": [
+        "没有明确 market bar",
+        "只写了公司逻辑，没写市场错在哪",
+        "没写清偏差是方向、幅度还是时点",
+        "没有 recognition path"
+      ]
+    },
+    {
+      "from": "pm_decision",
+      "to": [
+        "variant_view"
+      ],
+      "trigger": [
+        "最终建议无法被 key bet sentence 支撑",
+        "red team 一击就穿",
+        "失效条件不清晰",
+        "PM 无法形成行动方案"
+      ]
+    }
+  ],
+  "investor_profile": "Style: fundamental long/short, quality-growth and selective cyclicals\nTypical holding period: 3-12 months primary, 1-3 years secondary\nRisk tolerance: medium\nMax position size: 5%\nPreference: estimate revisions, expectation gaps, catalysts, variant perception\nAvoid: binary event risk without edge, low-liquidity names, unclear accounting",
+  "notes": "Working assumptions for dry-run experimentation:\n- Treat as a high-growth platform/semi infrastructure name with unusually high market expectations.\n- Likely key 6-12M debates: data center demand durability, Blackwell ramp, hyperscaler capex persistence, competitive pressure, gross margin normalization.\n- Likely key challenge for expectations layer: distinguishing consensus demand strength from price-implied perfection."
+}
